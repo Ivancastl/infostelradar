@@ -2,10 +2,6 @@
 
 Este es un sistema desarrollado en Flask que busca credenciales de dominios específicos en archivos `.txt` y genera un archivo de resultados con los logins encontrados. Es ideal para la detección de credenciales filtradas.
 
-## Requisitos
-
-Para ejecutar este proyecto, necesitarás tener instalado Python y Flask. Asegúrate de tener la última versión de Flask instalada.
-
 ## Instalación
 
 ### **Paso 1:**
@@ -23,7 +19,7 @@ Dentro de esta carpeta ingresa los archivos a leer txt
 ### **Paso 3:**
 Accede al directorio del proyecto
 ```bash
-cd sistema_info
+cd leer_info
 ```
 
 ### **Paso 4:**
