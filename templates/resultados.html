@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados Scan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><span class="blink">>>_</span> RESULTADOS SCAN</h1>
+            <p class="subtitle">// Dominio analizado: <span class="target">{{ datos.dominio }}</span></p>
+        </div>
+        
+        {% if datos.error %}
+            <div class="error">{{ datos.error }}</div>
+        {% else %}
+            <div class="result-box">
+                <div class="scan-summary">
+                    <h2>LOGINS ENCONTRADOS: <span class="contador">{{ datos.total }}</span></h2>
+                    <p class="timestamp">// Scan completado: {{ hora_actual }}</p>
+                </div>
+                
+                {% if datos.logins %}
+                <div class="logins-list">
+                    {% for login in datos.logins %}
+                        <div class="login-item">{{ login }}</div>
+                    {% endfor %}
+                </div>
+                
+                {% if datos.archivo %}
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="{{ url_for('descargar', filename=datos.archivo) }}" 
+                       class="download-btn">⬇️ DESCARGAR RESULTADOS</a>
+                </div>
+                {% endif %}
+                
+                {% else %}
+                <p class="no-results">No se encontraron resultados</p>
+                {% endif %}
+            </div>
+        {% endif %}
+        
+        <div class="footer">
+            <a href="/" class="volver">← VOLVER AL SCANNER</a>
+            <p class="disclaimer">// Uso ético únicamente</p>
+        </div>
+    </div>
+</body>
+</html>
