@@ -19,7 +19,7 @@ Dentro de esta carpeta ingresa los archivos a leer txt
 ### **Paso 3:**
 Accede al directorio del proyecto
 ```bash
-cd leer_info
+cd infostelradar
 ```
 
 ### **Paso 4:**
